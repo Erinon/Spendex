@@ -4,7 +4,7 @@ import com.spendex.data.database.model.DbSpend
 import com.spendex.domain.model.Currency
 import com.spendex.domain.model.Spend
 
-class DbSpendMapperImpl : DbSpendMapper {
+class DbSpendMapperImpl(private val dbDateTimeMapper: DbDateTimeMapper) : DbSpendMapper {
 
     override fun dbSpendToSpend(dbSpend: DbSpend) =
         with(dbSpend) {
@@ -13,12 +13,12 @@ class DbSpendMapperImpl : DbSpendMapper {
                 amount,
                 Currency.valueOf(currency),
                 description,
-                time
+                dbDateTimeMapper.stringToDateTime(date)
             )
         }
 
     override fun dbSpendListToSpendList(dbSpendList: List<DbSpend>) =
-        dbSpendList.map { dbSpendToSpend(it) }
+        dbSpendList.map(this::dbSpendToSpend)
 
     override fun spendToDbSpend(spend: Spend) =
         with(spend) {
@@ -27,7 +27,7 @@ class DbSpendMapperImpl : DbSpendMapper {
                 amount,
                 currency.toString(),
                 description,
-                time
+                dbDateTimeMapper.dateTimeToString(date)
             )
         }
 }

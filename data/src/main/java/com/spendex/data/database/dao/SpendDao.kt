@@ -2,8 +2,8 @@ package com.spendex.data.database.dao
 
 import androidx.room.*
 import com.spendex.data.database.model.DbSpend
-import io.reactivex.rxjava3.core.Completable
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Completable
+import io.reactivex.Single
 
 @Dao
 interface SpendDao {

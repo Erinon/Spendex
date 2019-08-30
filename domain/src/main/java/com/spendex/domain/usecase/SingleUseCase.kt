@@ -1,6 +1,6 @@
 package com.spendex.domain.usecase
 
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
 
 interface SingleUseCase<R> {
 

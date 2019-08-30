@@ -4,7 +4,7 @@ import com.spendex.data.database.dao.SpendDao
 import com.spendex.data.database.mapper.DbSpendMapper
 import com.spendex.domain.model.Spend
 import com.spendex.domain.repository.SpendRepository
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
 import java.util.*
 
 class SpendRepositoryImpl(

@@ -1,8 +1,8 @@
 package com.spendex.domain.repository
 
 import com.spendex.domain.model.Spend
-import io.reactivex.rxjava3.core.Completable
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Completable
+import io.reactivex.Single
 import java.util.*
 
 interface SpendRepository {

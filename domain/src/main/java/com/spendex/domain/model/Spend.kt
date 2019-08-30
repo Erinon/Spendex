@@ -1,11 +1,11 @@
 package com.spendex.domain.model
 
-import java.time.LocalDateTime
+import java.util.*
 
 data class Spend(
     val id: Long,
     val amount: Float,
     val currency: Currency,
     val description: String,
-    val time: LocalDateTime
+    val date: Date
 )
