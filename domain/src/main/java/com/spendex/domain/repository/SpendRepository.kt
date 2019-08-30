@@ -13,5 +13,5 @@ interface SpendRepository {
 
     fun editSpend(spend: Spend): Completable
 
-    fun removeSpend(spendId: Long): Completable
+    fun removeSpend(spend: Spend): Completable
 }
